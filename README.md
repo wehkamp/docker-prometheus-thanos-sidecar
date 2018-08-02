@@ -20,3 +20,22 @@ $ docker run \
     --s3.access-key=IAMFTW \
     --tsdb.path="/tsdb"
 ```
+
+Example IAM policy that may be attached to the prometheus EC2 instance:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::metrics/*",
+                "arn:aws:s3:::metrics"
+            ]
+        }
+    ]
+}
+```
