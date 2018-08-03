@@ -12,12 +12,10 @@ $ docker run \
   --rm \
   -p 10902:10902 \
   -v /services/prometheus-data/tsdb/:/tsdb:rw \
-  -e S3_SECRET_KEY=IAMFTW \
-  wehkamp/prometheus-thanos-sidecar:0.1.0.rc2 \
+  wehkamp/prometheus-thanos-sidecar:git-e5ac1e0 \
     --prometheus.url=http://prometheus.service.consul:9090 \
     --s3.bucket=metrics \
     --s3.endpoint=s3.eu-west-1.amazonaws.com \
-    --s3.access-key=IAMFTW \
     --tsdb.path="/tsdb"
 ```
 
