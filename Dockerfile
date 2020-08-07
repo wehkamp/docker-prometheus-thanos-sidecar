@@ -13,7 +13,7 @@ RUN LAYER=build \
   && make \
   && cp thanos /bin/
 
-FROM wehkamp/alpine:3.7
+FROM 234348545939.dkr.ecr.eu-west-1.amazonaws.com/wehkamp/alpine:3.7
 EXPOSE 10902
 ENTRYPOINT ["thanos", "sidecar"]
 COPY --from=builder /bin/thanos /bin/thanos
